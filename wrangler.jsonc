@@ -1,0 +1,49 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "seeknode",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-06-18",
+  // "compatibility_flags": [
+  //   "nodejs_compat"
+  // ],
+  // 环境变量在生产环境中通过 wrangler secret 设置
+  // 本地开发使用 .dev.vars 文件
+  // "vars": {
+  //   "BOT_TOKEN": "YOUR_ACTUAL_BOT_TOKEN_HERE",
+  //   "START_COMMAND": "start"
+  // },
+  // 定时任务配置 - RSS监控
+  "triggers": {
+    "crons": [
+      "*/1 * * * *"
+    ]
+  },
+  // "kv_namespaces": [
+  //   {
+  //     "binding": "MY_KV_NAMESPACE",
+  //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  //   }
+  // ],
+  // "r2_buckets": [
+  //   {
+  //     "binding": "MY_BUCKET",  
+  //     "bucket_name": "my-bucket"
+  //   }
+  // ],
+  // D1数据库配置
+  // 生产环境数据库配置在这里
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "seeknode",
+      "database_id": "54b5e9e8-d5fb-42f4-a5b8-61df77411d31"
+    }
+  ],
+  // "ai": {
+  //   "binding": "AI"
+  // },
+  // "observability": {
+  //   "enabled": true,
+  //   "head_sampling_rate": 1
+  // }
+}
